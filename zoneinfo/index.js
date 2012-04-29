@@ -5,6 +5,12 @@ var conf = require('./conf');
 var timezoneJSparser = require('./timezone-js/preparse');
 var timezoneJS = require('./timezone-js/timezone-js');
 
+var oneWeek = 60 * 60 * 24 * 7;
+function addCachingHeaders(req, res, next) {
+	res.header('Cache-Control', 'public, max-age=' + oneWeek);
+	next();
+}
+
 function allowCORS(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
 	next();
@@ -69,11 +75,11 @@ exports.createApp = function() {
 			'<p>Made with JS, love, and <a href="http://noiregrets.com">noir egrets</a> by <a href="http://www.twitter.com/hitsthings">@hitsthings</a>.</p>');
 	});
 
-	app.get('/tzinfo', allowCORS, handleNonJSON, handleGetTzInfo, function(request, response) {
+	app.get('/tzinfo', allowCORS, handleNonJSON, addCachingHeaders, handleGetTzInfo, function(request, response) {
 	  response.send('To use this service, specify locations using query string parameters. E.g., /tzinfo?zone=America/Chicago&zone=America/New_York');
 	});
 
-	app.get('/zones', allowCORS, handleNonJSON, handleListZones);
+	app.get('/zones',  allowCORS, handleNonJSON, addCachingHeaders, handleListZones);
 
 	app.get('/demo', function(req, res) {
 		res.send('<!DOCTYPE html>\n' +
