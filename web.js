@@ -1,10 +1,8 @@
-var express = require('express'); 
+var zoneinfo = require('./zoneinfo');
 
-var app = express.createServer(express.logger());
+var app = zoneinfo.createApp();
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
-});
+var util = require('util');
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
