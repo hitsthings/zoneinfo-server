@@ -71,7 +71,7 @@ exports.createApp = function() {
 				'<li>Use <a href="./tzinfo?zone=America/Chicago&zone=America/New_York&callback=fn_name">/tzinfo[?zone=X[&zone=Y[&callback=fn_name]]]</a> to get timezone info you can use with <a href="https://github.com/mde/timezone-js">timezone-js</a> (or however you like).</li>' +
 			'</ul>' +
 			'<p><a href="./demo">Demo</a></p>' +
-			'<p>Source on <a href="https://github.com/hitsthings/zoneinfo-server">GitHub</a>.</p>' +
+			'<p><a href="https://github.com/hitsthings/zoneinfo-server">Source</a>.</p>' +
 			'<p>Made with JS, love, and <a href="http://noiregrets.com">noir egrets</a> by <a href="http://www.twitter.com/hitsthings">@hitsthings</a>.</p>');
 	});
 
