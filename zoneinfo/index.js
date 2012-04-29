@@ -128,7 +128,7 @@ function demo() {
 	setupTimezoneJS();
 	
 	// USAGE: load timezone information for LA, NYC, Sydney, and Tokyo.
-	timezoneJS.timezone.loadZoneJSONData('./tzinfo?zone=America/Los_Angeles&zone=America/New_York&zone=Australia/Sydney&zone=Asia/Tokyo');
+	timezoneJS.timezone.loadZoneJSONData('http://zoneinfo-server.herokuapp.com/tzinfo?zone=America/Los_Angeles&zone=America/New_York&zone=Australia/Sydney&zone=Asia/Tokyo');
 	
 	function displayIntlClock() {
 		var clock = document.getElementById('clock');
