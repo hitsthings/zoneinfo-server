@@ -72,7 +72,7 @@ exports.createApp = function() {
 			'</ul>' +
 			'<p><a href="./demo">Demo</a></p>' +
 			'<p><a href="https://github.com/hitsthings/zoneinfo-server">Source</a>.</p>' +
-			'<p>Made with JS, love, and <a href="http://noiregrets.com">noir egrets</a> by <a href="http://www.twitter.com/hitsthings">@hitsthings</a>.</p>');
+			'<p>Made with JS, love, and <a href="http://www.noiregrets.com">noir egrets</a> by <a href="http://www.twitter.com/hitsthings">@hitsthings</a>.</p>');
 	});
 
 	app.get('/tzinfo', allowCORS, handleNonJSON, addCachingHeaders, handleGetTzInfo, function(request, response) {
